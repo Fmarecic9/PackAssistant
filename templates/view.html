@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+Your list
+{% endblock %}
+
+{% block content %}
+<br>
+<h1>These are the items in your list: </h1>
+<br>
+<table border="black">
+    <th>Item</th>
+    <th>Amount</th>
+    <th>Description</th>
+   {% for d in data %}
+    <tr>
+        <td align="center">{{d.item}}</td>
+        <td align="center">{{d.amount}}</td>
+        <td align="center">{{d.description}}</td>
+        <td><a class = "button" href="edit/{{d.id}}">Edit</a></td>
+        <td><a class = "button" href="delete/{{d.id}}">Delete</a></td>
+    {% endfor %}
+    </tr>
+</table>
+
+
+{% endblock %}

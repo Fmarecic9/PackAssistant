@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title%} List input {%endblock%}
+{%  block content %}
+<br>
+<div margin-left="10px">
+<h1>Add items to your list</h1>
+   <form method="post">
+       <table border="black">
+       <tr></tr>
+           <th>Item Name</th>
+           <th>Amount</th>
+           <th>Description</th>
+           <td></td>
+
+       <tr></tr>
+           <td><input type="text", name="item", value="{{request.form['item']}}" required></td>
+           <td><input type="text", name="amount", value="{{request.form['amount']}}" required></td>
+           <td><input type="text", name="description", value="{{request.form['description']}}" optional></td>
+           <td><input type="submit", value="Add"></td>
+       <tr></tr>
+        </table>
+   </form>
+</div>
+<br>
+
+{% endblock %}
+
