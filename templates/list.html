@@ -3,20 +3,20 @@
 {%  block content %}
 <br>
 <div margin-left="10px">
-<h1>Add items to your list</h1>
+<h1 align="center">Add items to your list</h1>
    <form method="post">
-       <table border="black">
-       <tr></tr>
+       <table border="black", align="center", bgcolor="C8C8C8">
+       <tr align="center">
            <th>Item Name</th>
            <th>Amount</th>
            <th>Description</th>
-           <td></td>
-
+           <th></th>
+        </tr>
        <tr></tr>
            <td><input type="text", name="item", value="{{request.form['item']}}" required></td>
            <td><input type="text", name="amount", value="{{request.form['amount']}}" required></td>
            <td><input type="text", name="description", value="{{request.form['description']}}" optional></td>
-           <td><input type="submit", value="Add"></td>
+           <td><input type="submit", class="btn btn-success" value="Add"></td>
        <tr></tr>
         </table>
    </form>

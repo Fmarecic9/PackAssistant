@@ -1,6 +1,6 @@
 from typing import Dict, Any
 
-from flask import Flask, redirect, url_for, render_template, make_response, request, jsonify
+from flask import Flask, redirect, url_for, render_template, request
 from pony import orm
 from pony.orm import db_session
 
@@ -86,17 +86,6 @@ def db_add(item, amount, description=None):
         return response
     except Exception as e:
         return {"response":"failure","error":str(e)}
-
-
-
-#@db_session
-#def db_get(get_item):
-#    try:
-#        result = Trip.get(id=get_item)
-#        result = result.to_dict()
-#        return {"response": "Success", "data": int(result)}
-#    except Exception as e:
-#        return {"response": "Failed", "error": e}
 
 
 if __name__ == "__main__":

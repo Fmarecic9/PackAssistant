@@ -3,18 +3,19 @@
 
 {% block content %}
 <br>
-<h1>Edit item: </h1>
+<h1 align="center">Edit item: </h1>
 <form method="POST", action="/edit/{{item.id}}">
-     <table border="black">
-
-         <tr><th>Item Name</th>
+     <table border="black", align="center", bgcolor="C8C8C8">
+         <tr align="center">
+             <th>Item Name</th>
              <th>Amount</th>
              <th>Description</th>
+             <th></th>
          </tr>
             <td><input type="text", name="item", value="{{item.item}}{{request.form['item']}}" required></td>
             <td><input type="text", name="amount", value="{{item.amount}}{{request.form['amount']}}" required></td>
             <td><input type="text", name="description", value="{{item.description}}{{request.form['description']}}" optional></td>
-            <td><input type="submit", value="Save changes"></td>
+            <td><input type="submit", class="btn btn-success" value="Save changes"></td>
 
      </table>
     </form>
