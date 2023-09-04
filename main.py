@@ -13,9 +13,10 @@ class Trip(db.Entity):
     item = orm.Required(str, unique=True)
     amount = orm.Required(int)
     description = orm.Optional(str, 50)
+    packed = orm.Optional(bool)
 
 
-db.bind(provider='sqlite', filename="listPA.sqlite", create_db=True)
+db.bind(provider='sqlite', filename="listPA.sqlite.sqlite", create_db=True)
 db.generate_mapping(create_tables=True)
 
 
@@ -79,9 +80,9 @@ def delete(item_id):
 
 
 @db_session
-def db_add(item, amount, description=None):
+def db_add(item, amount, description=None, packed=False):
     try:
-        Trip(item=item, amount=amount, description=description)
+        Trip(item=item, amount=amount, description=description, packed=packed)
         response = {"response":"success"}
         return response
     except Exception as e:
