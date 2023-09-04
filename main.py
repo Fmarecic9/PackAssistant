@@ -56,6 +56,7 @@ def edit(item_id):
             item.item = request.form['item']
             item.amount = request.form['amount']
             item.description = request.form['description']
+            item.packed = request.form['packed']
             try:
                 db.commit()
                 return redirect("/view")

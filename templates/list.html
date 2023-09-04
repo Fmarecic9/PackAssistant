@@ -2,7 +2,7 @@
 {% block title%} List input {%endblock%}
 {%  block content %}
 <br>
-<div margin-left="10px">
+<div>
 <h1 align="center">Add items to your list</h1>
    <form method="post">
        <table border="black", align="center", bgcolor="C8C8C8", width="650">
@@ -12,12 +12,13 @@
            <th>Description</th>
            <th></th>
         </tr>
-       <tr></tr>
+       <tr>
            <td><input type="text", name="item", value="{{request.form['item']}}" required></td>
            <td><input type="text", name="amount", value="{{request.form['amount']}}" required></td>
            <td><input type="text", name="description", value="{{request.form['description']}}" optional></td>
+           <td><input type="hidden", name="packed", value="{{request.form['packed']}}" optional></td>
            <td><input type="submit", class="btn btn-success" value="Add"></td>
-       <tr></tr>
+       </tr>
         </table>
    </form>
 </div>

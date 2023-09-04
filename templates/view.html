@@ -9,29 +9,26 @@ Your list
 <br>
 <table border="black", align="center">
     <tr align="center", bgcolor="C8C8C8">
-        <th>Item</th>
-        <th>Amount</th>
-        <th>Description</th>
-        <th>Packed</th>
-        <th></th>
-        <th></th>
+        <th width="200">Item</th>
+        <th width="25">Amount</th>
+        <th width="250">Description</th>
+        <th width="25">Packed</th>
+        <th width="25"></th>
+        <th width="25"></th>
         </tr>
    {% for d in data %}
-
     <tr>
         <td align="center", width="200">{{d.item}}</td>
         <td align="center", width="25">{{d.amount}}</td>
-        <td align="center", width="300">{{d.description}}</td>
-        {% if  d.packed == 0 %}
-        <td align="center", width="55"><input type="checkbox"></td>
+        <td align="center", width="250">{{d.description}}</td>
+        {% if d.packed == False %}
+        <td align="center">No</td>
         {% else %}
-        <td align="center", width="75"><input type="checkbox" checked></td>
+        <td align="center">Yes</td>
         {% endif %}
         <td><a class = "btn btn-primary btn-sm" href="edit/{{d.id}}">Edit</a></td>
         <td><a class = "btn btn-primary btn-sm" href="delete/{{d.id}}">Delete</a></td>
     {% endfor %}
     </tr>
 </table>
-
-
 {% endblock %}
